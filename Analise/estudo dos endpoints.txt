@@ -1,0 +1,137 @@
+(1) 
+
+/POST       /usuario/login
+
+request (body) 
+{
+    "email": "",
+    "senha": ""
+}
+
+response 
+{
+    "id": 0,
+    "email": "",
+    "nome": ""
+}
+
+///////////////////////////////////////////////////////////
+
+(2) 
+
+/POST       /filme
+
+request (body)
+{
+    "usuario": 0,
+    "nome": "",
+    "sinopse":"",
+    "avaliacao": 0.0,
+    "lancamento": 2005-10-05,
+    "disponivel": true
+}
+
+
+response (204)
+
+{
+    "id": 0,
+    "usuario": 0,
+    "nome": "",
+    "sinopse":"",
+    "avaliacao": 0.0,
+    "lancamento": 2005-10-05,
+    "disponivel": true
+}
+
+///////////////////////////////////////////////////////////
+
+(2.1) 
+
+/PUT                /filme/:id/capa
+
+request (body-form)
+{
+    "imagem": ""
+}
+
+response (204)
+--sem conteúdo
+
+///////////////////////////////////////////////////////////
+
+(3)
+
+/PUT        /filme/:id
+
+request
+{
+    "usuario": 0,
+    "nome": "",
+    "sinopse":"",
+    "avaliacao": 0.0,
+    "lancamento": 2005-10-05,
+    "disponivel": true
+}
+
+response (204)
+-- sem conteúdo
+
+////////////////////////////////////////////////////////////
+
+(4)
+
+/DELETE     /filme/:id
+
+response (204)
+
+/////////////////////////////////////////////////////////////
+
+(5)
+
+/GET        /filme
+
+response
+[
+    {
+    "usuario": 0,
+    "nome": "",
+    "avaliacao": 0.0,
+    "lancamento": 2005-10-05,
+    "disponivel": true
+    }
+]
+
+///////////////////////////////////////////////////////////
+
+(6)
+
+/GET        /filme?nome=Harry
+
+[
+    {
+    "usuario": 0,
+    "nome": "",
+    "avaliacao": 0.0,
+    "lancamento": 2005-10-05,
+    "disponivel": true
+    }
+]
+
+/////////////////////////////////////////////////////////
+
+(7)
+
+/GET        /filme/:id
+
+[
+    {
+    "usuario": 0,
+    "nome": "",
+    "sinopse":"",
+    "avaliacao": 0.0,
+    "lancamento": 2005-10-05,
+    "imagem":"",
+    "disponivel": true
+    }
+]
